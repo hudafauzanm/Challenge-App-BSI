@@ -18,23 +18,26 @@ namespace ChallengeApp
             int[] multiply2 = {1, 4, -5, -2};
 
             
-
-            // BasicStatistic.FindMax(numbers);
-            // BasicStatistic.FindMin(numbers);
-            // BasicStatistic.CalculateAverage(numbers);
-            // BasicStatistic.CalculateTotal(numbers);
-
-            //FlatArray.Combine(theFirstArray,theSecondArray,theThirdArray);
-
-            //MultiplicationOfTwoArray.Run(multiply1,multiply2);
-            //Separator.Run("Huda Fauzan Murtadho","*");
-            //HowManyDuplicates.Run(dups);
-
-            //TriangleOfNumbers.Run(3);
-            //TriangleStars.Run(3);
-
-            //VowelToUppercase.Run("aaaa jku suka iko enak");
-
+            //====================BASIC STATISTIC======================================//
+            BasicStatistic.FindMax(numbers);
+            BasicStatistic.FindMin(numbers);
+            BasicStatistic.CalculateAverage(numbers);
+            BasicStatistic.CalculateTotal(numbers);
+            //=====================FLAT ARRAY==========================================//
+            FlatArray.Combine(theFirstArray,theSecondArray,theThirdArray);
+            //=====================MULTIPICATION=======================================//
+            MultiplicationOfTwoArray.Run(multiply1,multiply2);
+            //=====================SEPARATOR===========================================//
+            Separator.Run("Huda Fauzan Murtadho","*");
+            //=====================DUPLICATE===========================================//
+            HowManyDuplicates.Run(dups);
+            //=====================TRIANGELNUMBER======================================//
+            TriangleOfNumbers.Run(3);
+            //=====================TRIANGELSTARTS======================================//
+            TriangleStars.Run(3);
+            //=============================VOWEL=======================================//
+            VowelToUppercase.Run("aaaa jku suka iko enak");
+            //====================================CALENDAR=============================//
             GenerateCalendar.Calendar("Januari 2019");
 
 
