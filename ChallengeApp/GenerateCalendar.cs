@@ -18,72 +18,73 @@ namespace ChallengeApp
 {
     public class GenerateCalendar
     {
-        public static string Calendar(string bulan)
+        public static string Calendar(string time)
         {
-             Console.WriteLine(bulan);
-             var indo = new CultureInfo("id-ID");
-             DateTime waktu = DateTime.Parse("1 " + bulan,indo);
-             
+            var ci = new CultureInfo("id-ID");
+            DateTime dt = DateTime.Parse("1 " + time, ci);
+            int totDay = DateTime.DaysInMonth(dt.Year, dt.Month);
+            int batas = 0;
+            string ret = "S    S    R    K    J    S    M\n";
+            var days = new Dictionary<string, int>()
+            {
+                {"Monday", 0},
+                {"Tuesday", 1},
+                {"Wednesday", 2},
+                {"Thursday", 3},
+                {"Friday", 4},
+                {"Saturday", 5},
+                {"Sunday", 6},
+            };
 
-             var haris = new Dictionary<string,int>
-             {
-                {"Senin", 0},
-                {"Selasa", 1},
-                {"Rabu", 2},
-                {"Kamis", 3},
-                {"Jumat", 4},
-                {"Sabtu", 5},
-                {"Minggu", 6},
-             };
+            int startingDay = 0;
+            // Console.WriteLine("jumlah hari : {0}", totDay);
 
-             int mulaiHari = 0;
-             int totalHari = DateTime.DaysInMonth(waktu.Year,waktu.Month);
-             
-             foreach(var hari in haris)
-             {
-                 if(waktu.ToString("dddd") == hari.Key)
-                 {
-                     mulaiHari = hari.Value;
-                 }
-             }
-             
-             Console.WriteLine("S    S    R    K    J    S    M");
-             int batas = 0;
+            foreach (var day in days)
+            {
+                if(dt.ToString("dddd") == day.Key)
+                    startingDay = day.Value;
+            }
 
-             for(int i = 0 ; i < 5; i++)
-             {
-                 for (int j=0;j < 7;j++)
-                 {
-                     if (batas == totalHari)
-                     {
-                         goto end;
-                     }
-                     else if ( i == 0 && j == 0)
-                     {
-                         j = mulaiHari;
-                         Console.Write(printSpace(j));
-                     }
-    
-                     Console.Write("{0:00}   ", batas+1);
-                     batas++;
-                    
-                 }
-                 Console.WriteLine();
-             }
+            // Console.WriteLine(startingDay);
+            // Console.WriteLine("S    S    R    K    J    S    M");
 
-             end:
-             return null;
-        } 
+            for(int i=0; i<5; i++)
+            {
+                for(int j=0; j<7; j++)
+                {
+                    if(batas == totDay)
+                        goto end;
+
+                    if(i==0 && j==0)
+                    {
+                        j = startingDay;
+                        // Console.Write(printSpace(j));
+                        ret += printSpace(j);
+                    }
+
+                    ret += Convert.ToString(batas+1).PadRight(2, ' ') + "   ";
+                    // Console.Write("{0:00}   ", batas+1);
+                    batas++;
+                }
+
+                // Console.WriteLine();
+                ret += '\n';
+            }
+
+            // Console.WriteLine();
+
+            end:
+            return ret;
+        }
 
         public static string printSpace(int n)
         {
-            string temp ="     ";
+            string temp = "     ";
             string ret = "";
             for(int i=0; i<n; i++)
                 ret += temp;
 
             return ret;
         }
-        
     }
 }

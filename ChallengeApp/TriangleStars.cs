@@ -23,21 +23,27 @@ namespace ChallengeApp
 {
     public class TriangleStars
     {
-        public static int Run(int jumlah)
+        public static string Stars(int jumlah)
         {
+            string hasil = "";
             for(int i = 1 ; i <= jumlah; i++)
             {
-                for(int j = 1 ; j <= jumlah-1;j++)
+                for(int j = 1 ; j <= i;j++)
                 {
-                    Console.Write("\n");
+                   hasil += '*'; 
                 }
-                for(int k = 1; k <= i ; k++)
-                {
-                    Console.Write("*");
-                }
-            }
 
-            return jumlah;
+                hasil += '\n';
+            }
+            return hasil;
+        }
+        public static int Run()
+        {
+            string input = Console.ReadLine();
+            int jumlah = Convert.ToInt32(input);
+
+            var hasil = Stars(jumlah);
+
             throw new NotImplementedException();
         }
     }

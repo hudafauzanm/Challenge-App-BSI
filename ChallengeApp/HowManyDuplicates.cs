@@ -19,14 +19,21 @@ namespace ChallengeApp
 {
     public class HowManyDuplicates
     {
-        public static int[] Run(int[] dups)
+        public static string duplicate(int[] dups)
         {
+            string hasil = "";
             Array.Sort(dups);
             foreach (var number in dups.GroupBy(x => x))
                 {
-                    Console.WriteLine(number.Key + " "+ "->" +" "  + (number.Count()) + "x");
+                    //Console.WriteLine(number.Count());
+                    hasil += Convert.ToString(number.Key + " "+ "->" +" "  + (number.Count()) + "x \n" );
                 }
-            return dups;
+            return hasil;
+        }
+        public static int[] Run(int[] dups)
+        {   
+            var hasil = duplicate(dups);
+            
             throw new NotImplementedException();
         }
     }

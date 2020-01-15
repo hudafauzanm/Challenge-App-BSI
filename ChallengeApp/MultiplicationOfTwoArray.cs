@@ -15,8 +15,7 @@ namespace ChallengeApp
 {
     public class MultiplicationOfTwoArray
     {   
-        public static int[] Run(int[] firstArray,int[] secondArray)
-        {
+        public static int[] Multiplication(int[] firstArray,int[] secondArray){
             int[] newArray = new int[4]; 
 
             for(int i=0; i <= firstArray.Length-1; i++ )
@@ -27,12 +26,21 @@ namespace ChallengeApp
                 }
             }
 
-            foreach(var x in newArray)
+            
+
+            return newArray;
+        }
+        public static int Run()
+        {
+            int[] firstArray = {1, 3, -5, 4};
+            int[] secondArray = {1, 4, -5, -2};
+
+            int [] hasil = Multiplication(firstArray,secondArray);
+
+            foreach(var x in hasil)
             {
                 Console.WriteLine(x);
             }
-
-            return newArray;
 
             throw new NotImplementedException();
         }

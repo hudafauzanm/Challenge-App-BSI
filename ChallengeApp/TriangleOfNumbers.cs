@@ -22,21 +22,26 @@ namespace ChallengeApp
 {
     public class TriangleOfNumbers
     {
-        public static int Run(int jumlah)
+        public static string Numbers(int jumlah)
         {
+            string hasil = "";
             for(int i = 1 ; i <= jumlah; i++)
             {
-                for(int j = 1 ; j <= jumlah-1;j++)
+                for(int j = 1 ; j <= i;j++)
                 {
-                    Console.Write("\n");
+                   hasil += Convert.ToString(j); 
                 }
-                for(int k = 1; k <= i ; k++)
-                {
-                    Console.Write(k);
-                }
-            }
 
-            return jumlah;
+                hasil += '\n';
+            }
+            return hasil;
+        }
+        public static int Run()
+        {
+            string input = Console.ReadLine();
+            int jumlah = Convert.ToInt32(input);
+
+            var hasil = Numbers(jumlah);
 
             throw new NotImplementedException();
         }

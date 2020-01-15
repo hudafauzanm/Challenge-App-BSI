@@ -15,7 +15,7 @@ namespace ChallengeApp
 {
     public class Separator
     {
-        public static string Run(string kalimat, string sep ="-" )
+        public static string separators(string kalimat, string sep ="-" )
         {
             string hapus = kalimat.Replace(" ",String.Empty);
             var sepr = string.Join(sep,hapus.ToCharArray());
@@ -26,6 +26,13 @@ namespace ChallengeApp
             }
 
             return sepr;
+        }
+        public static string Run()
+        {
+            string kalimat = Console.ReadLine();
+            string sep = Console.ReadLine();
+
+            string hasil = separators(kalimat,sep);
 
             throw new NotImplementedException();
         }

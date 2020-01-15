@@ -18,27 +18,27 @@ namespace ChallengeApp
             int[] multiply2 = {1, 4, -5, -2};
 
             
-            //====================BASIC STATISTIC======================================//
-            BasicStatistic.FindMax(numbers);
-            BasicStatistic.FindMin(numbers);
-            BasicStatistic.CalculateAverage(numbers);
-            BasicStatistic.CalculateTotal(numbers);
-            //=====================FLAT ARRAY==========================================//
-            FlatArray.Combine(theFirstArray,theSecondArray,theThirdArray);
-            //=====================MULTIPICATION=======================================//
-            MultiplicationOfTwoArray.Run(multiply1,multiply2);
-            //=====================SEPARATOR===========================================//
-            Separator.Run("Huda Fauzan Murtadho","*");
+           // ====================BASIC STATISTIC======================================//
+            // BasicStatistic.FindMax(numbers);
+            // BasicStatistic.FindMin(numbers);
+            // BasicStatistic.CalculateAverage(numbers);
+            // BasicStatistic.CalculateTotal(numbers);
+            // //=====================FLAT ARRAY==========================================//
+            // FlatArray.Combine(theFirstArray,theSecondArray,theThirdArray);
+            // //=====================MULTIPICATION=======================================//
+            // MultiplicationOfTwoArray.Multiplication(multiply1,multiply2);
+            // //=====================SEPARATOR===========================================//
+            // Separator.separators("Huda Fauzan Murtadho","*");
             //=====================DUPLICATE===========================================//
             HowManyDuplicates.Run(dups);
             //=====================TRIANGELNUMBER======================================//
-            TriangleOfNumbers.Run(3);
-            //=====================TRIANGELSTARTS======================================//
-            TriangleStars.Run(3);
-            //=============================VOWEL=======================================//
-            VowelToUppercase.Run("aaaa jku suka iko enak");
-            //====================================CALENDAR=============================//
-            GenerateCalendar.Calendar("Januari 2019");
+            // TriangleOfNumbers.Run();
+            // //=====================TRIANGELSTARTS======================================//
+            // TriangleStars.Run();
+            // //=============================VOWEL=======================================//
+            // VowelToUppercase.Run("aaaa jku suka iko enak");
+            // //====================================CALENDAR=============================//
+            // Console.WriteLine(GenerateCalendar.Calendar("Januari 2019")); 
 
 
 
